@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: inherit;
+}
+
+nav,
+nav ul {
+    display: flex;
+    flex-flow: row now;
+}
+
+nav {
+    background-color: lavender;
+    padding: 1.5em 2em;
+
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    gap: 2em;
+}
