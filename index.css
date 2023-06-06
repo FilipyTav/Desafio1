@@ -1,3 +1,6 @@
+/* Navegadores adicionam estilos em alguns elementos, o 
+/* que deixa mais complicado para fazer customização.
+/* A parte abaixo remove desses estilos */
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +8,17 @@
     box-sizing: border-box;
 }
 
+/* Corpo do site. Inicialmente, seu tamanho é reduzido pelo 
+/* tamanho do conteúdo dentro de si. 
+/* A parte abaixo força o corpo a ter a altura da tela, independentemente
+/* de seu conteúdo. */
 body {
+    /* vh - view-height - tamanho da tela */
+    /* 100% do tamanho da tela */
     min-height: 100vh;
 }
 
+/* Remove estilos padrão de links, especificamente */
 a,
 a:link,
 a:visited,
@@ -19,20 +29,32 @@ a:active {
     font-weight: inherit;
 }
 
+/* Flexbox é um assunto complicado. Veja: https://developer.mozilla.org/pt-BR/docs/Learn/CSS/CSS_layout/Flexbox */
+/* Basicamente, é um elemento que pode mudar seu tamanho de acordo */
+/* com algumas especificações */
 nav,
 nav ul {
     display: flex;
     flex-flow: row now;
 }
 
+/* Barra de navegação, geralmente no topo do site */
 nav {
+    /* Cor de fundo */
     background-color: lavender;
+
+    /* Espaço entre conteúdo do elemento e suas bordas */
     padding: 1.5em 2em;
 
+    /* Propriedade da flexbox - Espaço horizontal entre */
+    /* os elementos é o máximo possível */
     justify-content: space-between;
 }
 
 nav ul {
+    /* Remove a bolinha antes do elemento */
     list-style: none;
+
+    /* Propriedade flex - espaço entre os elementos */
     gap: 2em;
 }
