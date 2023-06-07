@@ -13,7 +13,7 @@
 
 /* Navegadores adicionam estilos em alguns elementos, o 
 /* que deixa mais complicado para fazer customização.
-/* A parte abaixo remove desses estilos */
+/* A parte abaixo remove alguns desses estilos */
 * {
     margin: 0;
     padding: 0;
@@ -69,6 +69,9 @@ nav {
 
     /* Espaço entre conteúdo do elemento e suas bordas */
     /* padding: 1.5em 2em; */
+
+    /* em = tamanho da fonte */
+    /* 1em = 16px. Veja a definição no topo desse arquivo */
     padding: 1.5em 1em;
 
     /* Propriedade da flexbox - posiciona elementos horizontalmente no centro */
