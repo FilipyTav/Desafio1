@@ -44,19 +44,25 @@ nav {
     background-color: lavender;
 
     /* Espaço entre conteúdo do elemento e suas bordas */
-    padding: 1.5em 2em;
+    /* padding: 1.5em 2em; */
+    padding: 1.5em 1em;
 
-    /* Propriedade da flexbox - Espaço horizontal entre */
-    /* os elementos é o máximo possível */
-    justify-content: space-between;
+    /* Propriedade da flexbox - posiciona elementos horizontalmente no centro */
+    justify-content: center;
 }
 
 nav ul {
     /* Remove a bolinha antes do elemento */
     list-style: none;
 
+    justify-content: center;
+
+    min-width: 100%;
+
     /* Propriedade flex - espaço entre os elementos */
-    gap: 2em;
+    gap: 20%;
+
+    font-size: 0.6em;
 }
 
 main {
