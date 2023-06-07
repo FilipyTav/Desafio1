@@ -85,6 +85,11 @@ section.imagem_container {
 .texto {
     display: flex;
     flex-flow: column nowrap;
+
+    justify-content: space-between;
+
+    /* red, green, blue, opacity */
+    background-color: rgb(234, 123, 143, 0.5);
 }
 
 .texto button {
@@ -171,6 +176,7 @@ section.imagem_container p {
         /* vw - view width - largura da tela */
         width: 50vw;
         height: auto;
+        flex-shrink: 0;
     }
 
     section.imagem_container p {
