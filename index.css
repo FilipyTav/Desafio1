@@ -35,6 +35,9 @@ a:active {
 nav,
 nav ul {
     display: flex;
+
+    /* row - horizontal */
+    /* column - vertical */
     flex-flow: row now;
 }
 
@@ -63,6 +66,74 @@ nav ul {
     gap: 20%;
 
     font-size: 0.6em;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav li a {
+    padding: 0.2em 0.4em;
+
+    /* Largura e altura máximos - */
+    /* ocupa o tamanho do container */
+    width: 100%;
+    height: 100%;
+
+    display: inline-block;
+
+    position: relative;
+    z-index: 1;
+
+    cursor: pointer;
+}
+
+/* ::before e ::after - pseudoelementos */
+/* assunto mais avançado - elementos que */
+/* não precisam ser expressados em HTML */
+ul li a::before,
+ul li a::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+ul li a::before {
+    content: "";
+    background-color: red;
+
+    width: 0;
+
+    transition: width 1s ease;
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+ul li a::after {
+    /* Fica invisível se não fazer isso */
+    content: "";
+
+    /* Tamanho zero no início */
+    /* não quero que apareça */
+    width: 0;
+
+    /* Blur nos elementos que estão por trás */
+    backdrop-filter: blur(0.7px);
+
+    /* Transition - propriedades a serem animadas */
+    /* Em order: propriedade, tempo de duração e */
+    /* estil de animação */
+    /* Veja: https://developer.mozilla.org/pt-BR/docs/Web/CSS/transition */
+    transition: width 1s ease;
+
+    pointer-events: none;
+}
+
+ul li a:hover::before,
+ul li a:hover::after {
+    width: 100%;
 }
 
 main {
@@ -95,14 +166,26 @@ section.imagem_container {
 .texto button {
     align-self: center;
     padding: 0.5em 2em;
+
+    /* Arredondar as bordas */
+    /* experimente com outros valores */
+    /* e veja o que acontece */
     border-radius: 13px;
+
+    /* Borda. Em order: */
+    /* grossura, estilo e cor */
     border: 2px solid purple;
+
     background-color: lavender;
 }
 
 .texto button:hover {
     background-color: purple;
     color: lavender;
+
+    /* Estilo do mouse quando passa */
+    /* por cima do elemento */
+    /* Veja: https://developer.mozilla.org/pt-BR/docs/Web/CSS/cursor */
     cursor: pointer;
 }
 
@@ -167,6 +250,9 @@ section.imagem_container p {
     bottom: -10%;
 }
 
+/* Para responsividade. Quando a tela for maior */
+/* que o valor dado(50em = 800px), esses valores */
+/* serão aplicados */
 @media (min-width: 50em) {
     section.imagem_container {
         flex-flow: row nowrap;
@@ -176,17 +262,12 @@ section.imagem_container p {
         /* vw - view width - largura da tela */
         width: 50vw;
         height: auto;
+
+        /* Propriedade flex - elemento não diminui de tamanho */
         flex-shrink: 0;
     }
 
     section.imagem_container p {
-        /* Posicionar livremente */
-        /* position: relative; */
-
         position: relative;
-        /* top: 0; */
-        /* bottom: 0; */
-        /* right: 0; */
-        /* width: 60%; */
     }
 }
